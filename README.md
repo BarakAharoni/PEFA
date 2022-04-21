@@ -1,7 +1,8 @@
 # PEFA
 PE File Analysis tool
 
-![image](https://user-images.githubusercontent.com/97598628/164481871-d9066844-fd6f-4796-8a08-a3695da56aa5.png)
+![image](https://user-images.githubusercontent.com/97598628/164484060-6fe62487-8f64-46c7-8c09-a9ff3ec3d0e3.png)
+
 
 ## Capabilities
 ```
