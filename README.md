@@ -1,16 +1,7 @@
 # PEFA
 PE File Analysis tool
 
-```
-
-██████╗ ███████╗███████╗ █████╗ 
-██╔══██╗██╔════╝██╔════╝██╔══██╗
-██████╔╝█████╗  █████╗  ███████║
-██╔═══╝ ██╔══╝  ██╔══╝  ██╔══██║
-██║     ███████╗██║     ██║  ██║
-╚═╝     ╚══════╝╚═╝     ╚═╝  ╚═╝    
-
-```
+![image](https://user-images.githubusercontent.com/97598628/164481871-d9066844-fd6f-4796-8a08-a3695da56aa5.png)
 
 ## Capabilities
 ```
@@ -24,8 +15,6 @@ PE File Analysis tool
 ## Usage
 1) Run the tool
 ` python pefa.py`
-
-![image](https://user-images.githubusercontent.com/97598628/164481871-d9066844-fd6f-4796-8a08-a3695da56aa5.png)
 
 2) Loads the wanted file 
   Press `load` or `l` and enter file's full path.
