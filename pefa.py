@@ -33,8 +33,10 @@ HELP_MENU = """
 
     l or load                        Load file for analysis
     i or info                        Show information about PE File
-    y or yara                        Generate Yara rule based on IOCs found in the analysis
+    y or yara                        Find YARA rules that the file is compatible with
     d or dis                         Enter to disassembler mode
+    h or help                        Show the help menu
+    e or exit                        Exit the program
     so or setoutput                  Set output file for report
 
     """
@@ -47,30 +49,29 @@ DISASM_HELP = """
     exit        e   Exit Disassembler Shell
 """
 
-YARA_SIG_PATH = r".\YaraRules-master"
-global yaraRules
-yaraRules = {}
+YARA_RULES = {}
 
 ################### Extra functionality ###################
 def buildYara(rulesPath):
-    global yaraRules
-    for obj in os.listdir(rulesPath):
-        fullpath = r"{}\{}".format(rulesPath, obj)
-        ext = obj.split(".")[1:]
-        if os.path.isfile(fullpath) and len(ext) == 1 and (ext[0] == "yar" or ext[0] == "yara"):
-            try:
-                yaraRules[obj.split(".")[0]] = yara.compile(fullpath)#, include = True)
-            except:
-                pass
+    try:
+        for obj in os.listdir(rulesPath):
+            fullpath = r"{}\{}".format(rulesPath, obj)
+            ext = obj.split(".")[1:]
+            if os.path.isfile(fullpath) and len(ext) == 1 and (ext[0] == "yar" or ext[0] == "yara"):
+                try:
+                    YARA_RULES[obj.split(".")[0]] = yara.compile(fullpath)#, include = True)
+                except:
+                    pass
 
-        # Recursively yara rules build
-        if os.path.isdir(fullpath):
-            buildYara(fullpath)
+            # Recursively yara rules build
+            if os.path.isdir(fullpath):
+                buildYara(fullpath)
+    except:
+        pass
 
 def checkYara(data):
-    global yaraRules
     yaraSigs = {}
-    for pack, rules in yaraRules.items():
+    for pack, rules in YARA_RULES.items():
         result = rules.match(data = data)
         if result:
             yaraSigs[pack] = result
@@ -162,11 +163,8 @@ def startShell():
             
         elif command.lower() == "yara" or command.lower() == "y":
             print("[+] Yara Rules checking")
-            sigPath = input("\tEnter signatures path ([Enter] for Default): ")
-            if sigPath == "":
-                buildYara(YARA_SIG_PATH)
-            else:
-                buildYara(sigPath)
+            sigPath = input("\tEnter YARA signatures path: ")
+            buildYara(sigPath)
 
             try:
                 yaraSig = checkYara(analysisFile.data)
