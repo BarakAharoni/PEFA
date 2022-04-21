@@ -1,1 +1,0 @@
-[*] Reglas random para Yara
