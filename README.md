@@ -27,7 +27,8 @@ PE File Analysis tool
    
 5) `info` 
 
-![image](https://user-images.githubusercontent.com/97598628/164482542-3b9b86da-3cb7-4f60-a8f8-2eb1b17c034d.png)
+![image](https://user-images.githubusercontent.com/97598628/164711358-a9fabcda-2cca-48d4-ab75-596541ecdd5f.png)
+
 
 6) `yara`
 
