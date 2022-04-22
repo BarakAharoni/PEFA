@@ -1,7 +1,7 @@
 # PEFA
 PE File Analysis tool
 
-![image](https://user-images.githubusercontent.com/97598628/164484060-6fe62487-8f64-46c7-8c09-a9ff3ec3d0e3.png)
+![image](https://user-images.githubusercontent.com/97598628/164711678-677f8040-4757-462e-b3b1-bc0761078f69.png)
 
 
 ## Capabilities
@@ -29,14 +29,13 @@ PE File Analysis tool
 
 ![image](https://user-images.githubusercontent.com/97598628/164711358-a9fabcda-2cca-48d4-ab75-596541ecdd5f.png)
 
-
 6) `yara`
 
-![image](https://user-images.githubusercontent.com/97598628/164482884-800ab5ae-0b63-469c-9af8-0b551a2663fa.png)
+![image](https://user-images.githubusercontent.com/97598628/164711584-26baf59e-c382-4bc4-9172-8b8822a7f5d7.png)
 
 7) `dis`
 
-![image](https://user-images.githubusercontent.com/97598628/164482959-fa38ce37-6650-4c3d-aa61-bf52feca8930.png)
+![image](https://user-images.githubusercontent.com/97598628/164711525-aa676b17-c59d-41aa-ab56-2ce52caf4649.png)
 
 Allows to reverse-engineer the file start from its entry point, in an interactive disassembler.
 
